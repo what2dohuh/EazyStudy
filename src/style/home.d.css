@@ -1,0 +1,72 @@
+/* src/assets/home.d.css */
+.home {
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  background-color: #f7f2ed;
+  padding: 20px;
+  font-family:'Courier New', Courier, monospace;
+}
+
+.headerContainer {
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 10px;
+}
+.forum{
+  margin-bottom: 20px;
+  background-color: #f7f2ed;
+  padding: 20px;
+  font-family:'Courier New', Courier, monospace;
+}
+.h1
+{
+  font-family:'Courier New', Courier, monospace;
+}
+.headerContainer h1 {
+  margin-bottom: 20px;
+}
+
+.headerContainer p {
+  font-size: 16px;
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+.headerContainer button {
+  background-color: #4c5ec0;
+  color: #faf0e6;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.headerContainer button:hover {
+  background-color: #000000;
+}
+
+
+.btn button{
+  background-color: #000000;
+  color: #faf0e6;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: box0-shadow 0.3s ease;
+}
+.footerContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 10px;
+  background-color: #f7f2ed;
+  font-family:'Courier New', Courier, monospace;
+}

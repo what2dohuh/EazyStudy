@@ -1,0 +1,21 @@
+/* Banner.css */
+.banner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff52;
+    padding: 20px;
+    box-shadow: 1px 2px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.banner-item {
+    flex: 1;
+    text-align: center;
+}
+
+.banner-item h2 {
+    font-size: 21px;
+    color: #333;
+    margin: 0;
+    padding: 10px;
+}

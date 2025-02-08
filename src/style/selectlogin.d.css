@@ -1,0 +1,111 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 50vh;
+    border-radius: 5px;
+    background-color: #ffffff;
+    margin: 10px;
+}
+.box img{
+    width: 70%;
+    height:60%;
+}
+.box p{
+    font-size: 16px;
+    margin: 10px;
+    padding: 10px;
+    color: #7c7474d3;
+}
+.box button{
+    background-color: #4c5ec0;
+    color: #faf0e6;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    margin-bottom: 50px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.box button:hover{
+    background-color: black;
+  }
+ .box button, .box h2{
+    font-family: 'Courier New', Courier, monospace;
+  }
+  .box .studentbtn{
+    background-color: #0a0d1d00;
+    color: #0c0c0e;
+  }
+  .box .studentbtn:hover{
+    background-color: #31a39a;
+  }
+  .Slogin{
+    text-align: center;
+  }
+  .Slogin h1{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 10px;
+    margin-bottom: 40px;
+    padding: 10px;
+  }
+  .Slogin .signupbtnlog{
+    background-color: #4c5dc0;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    margin-bottom: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .Slogin .signupbtnlog:hover{
+    background-color: #000000;
+  }
+  .Slogin .loginbtnlog{
+    background-color: #31a39a;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    margin-bottom: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .Slogin .loginbtnlog:hover{
+    background-color: #000000;
+  }
+  .Slogin .signuptutorbtn{
+    background-color: #31a39a;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    margin-bottom: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .Slogin .signuptutorbtn:hover{
+    background-color: #000000;
+  }

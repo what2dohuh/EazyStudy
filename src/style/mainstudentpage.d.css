@@ -1,0 +1,245 @@
+.line{
+    background-color: #000000;
+}
+.studentmain{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.main h2{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: start;
+    color: #383636;
+    margin: 5px 0 0 5px;
+    padding: 10px;
+    font-size: 30px;
+
+}
+.mix .mix2 h3{
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    color: rgb(71, 67, 67);
+}
+.messagecardbox button{
+    background-color: #838bbb00;
+    font-family: 'Courier New', Courier, monospace;
+    color: #24201c;
+    border: 1px solid #2f7cd4 ;
+    padding: 10px 10px;
+    margin-bottom:10px ;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.messagecardbox button:hover{
+    background-color: #2f7cd4;
+}
+.mainmessages h3{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: start;
+    color: #383636;
+    margin: 5px 0 0 5px;
+    padding: 10px;
+    font-size: 24px;
+
+}
+.mainmessages h5{
+    font-family: 'Courier New', Courier, monospace;
+    color: #201f1f;
+    font-size: 14px;
+
+}
+.bannermain {
+    display: flex;
+    flex-direction: column;
+
+}
+.bannerfindtutor{
+display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+.level,.subject{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    color: rgb(158, 153, 147);
+    font-size: 14px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.level select , .subject select {
+    margin: 10px;
+    padding: 15px 20px 15px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    appearance:none;
+    -webkit-appearance:none;
+    -moz-appearance: none;
+    background-color: transparent;
+    border: 1.5px solid rgba(26, 26, 26, 0.521);
+    outline: none;
+    font-size: 14px;
+    font-family: 'Franklin Gothic Medium', 'Arial';
+    color: rgb(28, 29, 31);
+}
+.level select:hover ,.subject select:hover{
+    border: 1.5px solid #7183e9;
+}
+.level select option, .subject select option {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+.level select option:hover, .subject select option:hover{
+    color: rgb(59, 53, 53);
+    background-color: rgb(12, 6, 6);
+   
+}
+
+.level select::-ms-expand, .subject select::-ms-expand {
+    display: none;
+}
+.findtutbtn button{
+    background-color: #4c5dc000;
+    color: #000000;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #b5aaaa;
+    margin: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.findtutbtn button:hover{
+    background-color: #31a39a;
+}
+.findtutbtn label{
+    color: rgba(255, 255, 255, 0);
+}
+.bannertext p{
+    font-family: 'Courier New', Courier, monospace;
+    width: 60%;
+}
+.bannerfindtutor img{
+    width: 60px;
+    height: 60px;
+}
+.bannertext {
+    display: flex;
+    flex-direction: row;
+}
+.studentmessagemain{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+.messages{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(158, 153, 147);
+    font-size: 14px;
+    font-family: 'Franklin Gothic Medium', 'Arial';
+    margin:10px;
+    padding: 10px;
+    width: 100%;
+}
+.message{   
+
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+}
+.messagecard{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    color: rgb(158, 153, 147);
+    font-size: 14px;
+    font-family: 'Franklin Gothic Medium', 'Arial';
+    margin:10px;
+    width: 100%;
+    border: 1px solid rgb(233, 221, 221);
+    border-radius: 5px;
+}
+.upbox{
+    display:flex;
+    align-items: end;
+    justify-content: space-between;
+    margin: 10px;
+    width: 100%;
+}
+.upbox h5{
+    color: #6297d4;
+    cursor: pointer;
+}
+.upbox h5:hover{
+    color: #2f7cd4;
+}
+.main hr{
+    width: 100%;
+    height: 2px;
+    border: none;
+    background-color: rgba(195, 190, 190, 0.782);
+    margin: 5px;
+}
+.messages .btnfind{
+    background-color: #4c5dc000;
+    color: #000000;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #b5aaaa;
+    margin: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+.messages .btnfind:hover{
+    background-color: #4c5dc0;
+    color: white;
+}
+
+.mix{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: rgb(158, 153, 147);
+    font-size: 14px;
+    font-family: 'Franklin Gothic Medium', 'Arial';
+    margin:10px;
+    width: 100%;
+}

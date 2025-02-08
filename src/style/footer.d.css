@@ -1,0 +1,51 @@
+/* Footer.css */
+.footer {
+    background-color: #faf0e6;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction:row;
+    align-items: center;
+    gap: 20px;
+}
+
+.quote {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+    padding: 10px;
+    font-style: italic;
+}
+
+.contact-info, .social-media {
+    text-align: left;
+}
+
+.contact-info h3, .social-media h3 {
+    margin: 0;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+}
+
+.contact-info p, .social-media a {
+    margin: 5px 0;
+    
+    font-size: 16px;
+    color: #555;
+}
+
+.social-media a {
+    display: block;
+    text-decoration: none;
+}
+
+.social-media a:hover {
+    text-decoration: underline;
+}

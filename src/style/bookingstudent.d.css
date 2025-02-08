@@ -1,0 +1,97 @@
+.bookingbox2{
+    display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.bookingshowbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+.showupcoming{
+    display: flex;
+    flex-direction: column;
+    justify-content:start;
+    align-items: start;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+    border-radius: 5px;
+}
+.showupcoming hr{
+    width: 100%;
+    height: 2px;
+    border: none;
+    background-color: rgba(195, 190, 190, 0.782);
+    margin: 5px;
+}
+.titleup{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    
+    background-color: rgb(255, 255, 255);
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.titleup h4{
+    font-size: 16px;
+    font-family: 'Franklin Gothic Medium', 'Arial';
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    color: rgb(68, 61, 61);
+    cursor: pointer;
+}.titleup h4:hover{
+    color: #2f7cd4d7;
+}
+.titleup .active{
+    color: #2f7cd4d7;
+
+}
+.bookingbox h3{
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    color: rgb(14, 13, 13);
+}
+.btnfind{
+    background-color: #4c5dc000;
+    color: #000000;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #b5aaaa;
+    margin: 10px;
+    cursor: pointer;
+    width: 50%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+.btnfind:hover{
+    background-color: #4c5dc0;
+    color: white;
+}
+.showallinfo{
+    text-align: center;
+}
+.showallinfo p{
+    font-size: 16px;
+    margin: 10px;
+    padding: 10px;
+    color: #7c7474d3;
+}

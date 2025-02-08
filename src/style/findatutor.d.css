@@ -1,0 +1,90 @@
+
+.containforfind{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+width: 100%;
+}
+.cardinfortutor{
+    margin: 10px ;
+    padding: 10px;
+
+}
+.cardsfortutor{
+    background-color: white;
+    width: 60%;
+}
+.showlisttutor{
+    width: 55%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1px;
+}
+.findtutorbox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: start;
+}
+.findtutorcomponentbox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    margin-top: 4px;
+    margin-bottom: 3px;
+}
+ .infotutorcard{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+}
+.tutorprofileimg img{
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+}
+.boxfindtutorialcard{
+    background-color: white;
+    border-radius: 10px;
+}
+
+.btnfindtutor button{
+    background-color: #4c5dc000;
+    color: #000000;
+    padding: 1px;
+    border-radius: 5px;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    transition: background-color  0.3s ease;
+    transition: box-shadow 0.2 ease;
+}
+.btnfindtutor  button:hover{
+    background-color: #4c5ec0;
+    color: white;
+    box-shadow:  4px 8px rgba(29, 28, 28, 0.1);
+}
+.infotutor{
+    font-family: 'Courier New', Courier, monospace;
+    color: #2c2a2a;
+}
+.infotutorcard p{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    color: #666262;
+}
+.infotutorright h5{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    color: #4d4a4a;
+}
+.mainfindtutor h2{
+    margin: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    color: #272626;
+}
