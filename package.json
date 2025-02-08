@@ -2,11 +2,7 @@
   "name": "eazystudy",
   "private": true,
   "version": "0.0.0",
-<<<<<<< HEAD
-  "type": "module", 
-=======
   "type": "module",
->>>>>>> 489a09c (initial commit)
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -14,17 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
-=======
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^6.4.3",
+    "axios": "^1.7.9",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.1.5"
->>>>>>> 489a09c (initial commit)
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",

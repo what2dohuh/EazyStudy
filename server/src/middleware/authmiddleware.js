@@ -14,11 +14,7 @@ const authMiddleware = (req, res, next) => {
         req.user = decoded.userId;
         next();
     } catch (err) {
-<<<<<<< HEAD
-        res.status(401).json({ message: 'Token is not valid' });
-=======
         res.status(401).json({ message: 'Token is not valid:'+err });
->>>>>>> 489a09c (initial commit)
     }
 };
 

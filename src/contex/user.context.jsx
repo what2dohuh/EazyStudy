@@ -1,14 +1,33 @@
 import React, { createContext, useEffect, useState } from 'react';
+import axios from 'axios';
 
-export const UserContext = createContext({})
-export function UserContextProvider({children}){
-    const [user , setUser] = useState({})
+export const UserContext = createContext({});
+
+export function UserContextProvider({ children }) {
+    const [user, setUser] = useState(null);
+
     useEffect(() => {
-        // fetch user data from server
-        setUser({id:1, name:'John Doe',type:'student',messages:[{name:'Jhone Doe',from:1,mes:'hello',photo:'/src/assets/profile.gif',date:Date.now()},{name:'Jhone Doe',from:1,mes:'hello this is to inform you that ',photo:'/src/assets/profile.gif',date:Date.now()},{name:'Jhone Doe',from:1,mes:'hello this is to inform you that ',photo:'/src/assets/profile.gif',date:Date.now()},{name:'Jhone Doe',from:1,mes:'hello this is to inform you that ',photo:'/src/assets/profile.gif',date:Date.now()},{name:'Jhone Doe',from:1,mes:'hello this is to inform you that ',photo:'/src/assets/profile.gif',date:Date.now()}]})
-    }, [])
+        const fetchUser = async () => {
+            try {
+                const token = localStorage.getItem('token');
+                if (token) {
+                    const response = await axios.get('http://localhost:5000/api/profile', {
+                        headers: {
+                            Authorization: `Bearer ${token}`
+                        }
+                    });
+                    setUser(response.data);
+                }
+            } catch (error) {
+                console.error('Failed to fetch user profile:', error);
+            }
+        };
+
+        fetchUser();
+    }, []);
+
     return (
-        <UserContext.Provider value = {{user,setUser}}>
+        <UserContext.Provider value={{ user, setUser }}>
             {children}
         </UserContext.Provider>
     );

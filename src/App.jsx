@@ -1,36 +1,3 @@
-<<<<<<< HEAD
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-=======
 
 import NavbarComponent from './components/navbar.component'
 import { BrowserRouter as Router, Routes,Route } from 'react-router-dom'
@@ -56,14 +23,10 @@ function App() {
      <NavbarComponent/>
       <Routes>
         <Route path="/" element={<HomePage/>} />
-        <Route path="/signup" element={<SelectsignupPage/>} />
-        <Route path="/login" element={<SelectLoginPage/>} />
-        <Route path="/login/tutor" element={<LoginPage k='tutor'/>} />
-        <Route path="/login/student" element={<LoginPage k='student'/>} />
-        <Route path="/signup/student" element={<SignupStudentPage/>} />
-        <Route path="/signup/tutor" element={<SignupTutorPage/>} />
-        <Route path="/tutor/home" element={<MaintutorPage/>} />
-        <Route path="/student/home" element={<MainstudentPage/>} />
+        <Route path="/login" element={<LoginPage/>} />
+        <Route path="/signup" element={<SignupStudentPage/>} />
+        <Route path="/select" element={<SelectLoginPage/>} />
+        <Route path="/home" element={<MainstudentPage/>} />
         <Route path="/student/message" element={<MessagestudentPage/>} />
         <Route path="/student/booking" element={<BookingstudentPage/>} />
         <Route path="/student/findatutor" element={<FindatutorPage/>} />
@@ -71,7 +34,6 @@ function App() {
       
     </Router>
     </UserContextProvider>
->>>>>>> 489a09c (initial commit)
   )
 }
 
