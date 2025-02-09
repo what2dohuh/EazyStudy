@@ -3,6 +3,7 @@ import '../../style/login.d.css';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { UserContext } from '../../contex/user.context';
+import Cookies from 'js-cookie';
 
 const LoginPage = () => {
     const { user, setUser } = useContext(UserContext);
@@ -22,22 +23,28 @@ const LoginPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/api/login', {
-                email,
-                password,
-            });
-            // Assuming the response contains a user object and a token
-            const { user, token } = response.data;
-            // Save the token and user information as needed
-            // For example, you can save the token in localStorage
-            localStorage.setItem('token', token);
+            const response = await axios.post('http://localhost:8080/api/login', 
+                {
+                    email,
+                    password,
+                }, 
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                }
+            );
+
+            // Get the token from cookies
+            const token = Cookies.get('token');
+            console.log('Token from cookie:', token);
+            localStorage.setItem('token', response.data.token);
             // Update the user state in the context
-            setUser(user);
-            // Navigate to the select page after successful login
+            setUser(response.data);
             navigate('/select');
 
         } catch (err) {
-            setError('Login failed. Please try again.');
+            setError('Login failed. Please try again.: ' + err);
         }
     };
 

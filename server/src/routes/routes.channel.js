@@ -2,6 +2,7 @@ import express from 'express';
 import authMiddleware from '../middleware/authmiddleware.js';
 import TeacherApplication from '../models/models.TeacherApplication.js';
 import Channel from '../models/models.channel.js';
+import { getAllChannels } from '../controller/controller.channel.js';
 
 const router = express.Router();
 
@@ -64,5 +65,6 @@ router.post('/join-channel/:channelId', authMiddleware, async (req, res) => {
     }
 });
 
+router.get('/channels', authMiddleware, getAllChannels);
 
 export default router;

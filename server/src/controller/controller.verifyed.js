@@ -68,3 +68,35 @@ export const reviewApplication = async (req, res) => {
         res.status(500).json({ message: "Server error", error });
     }
 };
+
+// Add this new function to your existing controller
+export const getAllApprovedTutors = async (req, res) => {
+    try {
+        const approvedTutors = await TeacherApplication.find({ 
+            status: 'approved' 
+        }).select('-documents'); // Exclude documents for performance
+
+        if (!approvedTutors || approvedTutors.length === 0) {
+            return res.status(200).json({
+                success: true,
+                message: "No approved tutors found",
+                tutors: []
+            });
+        }
+
+        res.status(200).json({
+            success: true,
+            message: "Approved tutors retrieved successfully",
+            count: approvedTutors.length,
+            tutors: approvedTutors
+        });
+
+    } catch (error) {
+        console.error('Error fetching approved tutors:', error);
+        res.status(500).json({ 
+            success: false,
+            message: "Error fetching approved tutors", 
+            error: error.message 
+        });
+    }
+};

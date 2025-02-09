@@ -7,28 +7,61 @@ const router = express.Router();
 // 📌 Submit Teacher Application
 router.post('/apply', authMiddleware, async (req, res) => {
     try {
-        const { name, email, subject, experience, qualifications, documents } = req.body;
+        const { 
+            name, 
+            email, 
+            subject, 
+            experience, 
+            qualifications, 
+            documents, 
+            expectedFee,
+            aboutMe 
+        } = req.body;
 
         // Check if user has already applied
         const existingApplication = await TeacherApplication.findOne({ email });
         if (existingApplication) {
-            return res.status(400).json({ message: "You have already applied. Please wait for approval." });
+            return res.status(400).json({ 
+                success: false,
+                message: "You have already applied. Please wait for approval." 
+            });
+        }
+
+        // Validate expectedFee
+        if (expectedFee < 0) {
+            return res.status(400).json({
+                success: false,
+                message: "Expected fee cannot be negative"
+            });
         }
 
         const application = new TeacherApplication({
             name,
             email,
             subject,
-            experience,
-            qualifications,
-            documents
+            experience: Number(experience),
+            qualifications: Array.isArray(qualifications) ? qualifications : [qualifications],
+            documents: Array.isArray(documents) ? documents : [documents],
+            expectedFee: Number(expectedFee),
+            aboutMe,
+            status: 'pending'
         });
 
         await application.save();
-        res.status(201).json({ message: "Application submitted successfully. Waiting for approval." });
+
+        res.status(201).json({
+            success: true,
+            message: "Application submitted successfully. Waiting for approval.",
+            application
+        });
 
     } catch (error) {
-        res.status(500).json({ message: "Server error", error });
+        console.error('Application submission error:', error);
+        res.status(500).json({ 
+            success: false,
+            message: "Failed to submit application", 
+            error: error.message 
+        });
     }
 });
 
@@ -71,6 +104,37 @@ router.put('/review/:id', authMiddleware, async (req, res) => {
 
     } catch (error) {
         res.status(500).json({ message: "Server error", error });
+    }
+});
+
+router.get('/approved-tutors', async (req, res) => {
+    try {
+        const approvedTutors = await TeacherApplication.find({ 
+            status: 'approved' 
+        }).select('-documents');
+
+        if (!approvedTutors || approvedTutors.length === 0) {
+            return res.status(200).json({
+                success: true,
+                message: "No approved tutors found",
+                tutors: []
+            });
+        }
+
+        res.status(200).json({
+            success: true,
+            message: "Approved tutors retrieved successfully",
+            count: approvedTutors.length,
+            tutors: approvedTutors
+        });
+
+    } catch (error) {
+        console.error('Error fetching approved tutors:', error);
+        res.status(500).json({ 
+            success: false,
+            message: "Error fetching approved tutors", 
+            error: error.message 
+        });
     }
 });
 

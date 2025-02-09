@@ -1,0 +1,57 @@
+.teach-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f6f9fc 0%, #f1f5f9 100%);
+    padding: 2rem;
+}
+
+.teach-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.teach-header h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #4299e1, #667eea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.teach-header p {
+    color: #64748b;
+    font-size: 1.1rem;
+}
+
+.registration-section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.success-message {
+    text-align: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.success-message h2 {
+    color: #2d3748;
+    margin-bottom: 1rem;
+}
+
+.success-message p {
+    color: #718096;
+}
+
+@media (max-width: 768px) {
+    .teach-page {
+        padding: 1rem;
+    }
+
+    .teach-header h1 {
+        font-size: 2rem;
+    }
+}

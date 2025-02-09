@@ -1,0 +1,13 @@
+.learn {
+    padding: 20px;
+    text-align: center;
+}
+
+.learn h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.learn p {
+    font-size: 1.2em;
+}

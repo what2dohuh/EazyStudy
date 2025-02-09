@@ -1,4 +1,3 @@
-
 import NavbarComponent from './components/navbar.component'
 import { BrowserRouter as Router, Routes,Route } from 'react-router-dom'
 import HomePage from './page/home.page'
@@ -13,7 +12,15 @@ import MainstudentPage from './page/student/mainstudent.page'
 import MessagestudentPage from './page/student/messagestudent.page'
 import BookingstudentPage from './page/student/bookingstudent.page'
 import FindatutorPage from './page/student/findatutor.page'
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import PersonalizedFeedPage from './page/personalized.page'
+import SelectedFeedsPage from './page/selectedfeeds.page'
+import AboutPage from './page/about.page'
+import TeachPage from './page/teach.page'
+import ConnectWithTutor from './page/connectwithtutuor';
+import Chatbot from './chatbox'
+import VideoCall from './components/VideoCall/VideoCall';
 
 function App() {
 
@@ -27,11 +34,18 @@ function App() {
         <Route path="/signup" element={<SignupStudentPage/>} />
         <Route path="/select" element={<SelectLoginPage/>} />
         <Route path="/home" element={<MainstudentPage/>} />
-        <Route path="/student/message" element={<MessagestudentPage/>} />
+        <Route path="/message" element={<MessagestudentPage/>} />
         <Route path="/student/booking" element={<BookingstudentPage/>} />
-        <Route path="/student/findatutor" element={<FindatutorPage/>} />
+        <Route path="/find" element={<FindatutorPage/>} />
+        <Route path="/personalized-feed" element={<PersonalizedFeedPage />} />
+        <Route path="/selected-feeds" element={<SelectedFeedsPage />} />
+        <Route path="/about" element={<AboutPage/>}/>
+        <Route path="/teach" element={<TeachPage/>} />
+        <Route path="/connect-tutor/:tutorId" element={<ConnectWithTutor />} />
+        <Route path="/video-call/:tutorId" element={<VideoCall />} />
       </Routes>
-      
+      <ToastContainer />
+      <Chatbot/>
     </Router>
     </UserContextProvider>
   )

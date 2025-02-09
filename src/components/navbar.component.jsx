@@ -25,6 +25,7 @@ const NavabarComponent = () => {
             <div className='left' id={openLinks ? "open" : "close"}>
                 <Link to='/'><h2>EazyStudy</h2></Link>
                 <div className='hiddenLinks'>
+              
                     <div className="bold">
                         <Link to='/signup/student'>Find a tutor</Link>
                     </div>
@@ -35,9 +36,16 @@ const NavabarComponent = () => {
                 </div>
             </div>
             <div className='right'>
-                <Link to={`${user ? isTeacher ? '/tutor/home' : '/student/home' : '/about'}`}>{user ? "Home" : "About"}</Link>
+            {user ? <div className="bold">
+                        <Link to='/'>{"Welcome:"+user?.user.name}</Link>
+                    </div> : ""}
+           
+            <div className="bold">
+                        <Link to='/find'>Find a tutor</Link>
+                    </div>
+                <Link to={`${user ? isTeacher ? '/home' : '/home' : '/about'}`}>{user ? "Home" : "About"}</Link>
                 <div className="bold">
-                    <Link to={`${user ? isTeacher ? '/tutor/message' : '/student/message' : ''}`}>{user ? "Message" : ""}</Link>
+                    <Link to={`${user ? isTeacher ? '/message' : '/message' : ''}`}>{user ? "Message" : ""}</Link>
                 </div>
                 <Link to={`${user ? isTeacher ? '/tutor/payments' : '/student/payments' : ''}`}>{user ? "Payments" : ""}</Link>
                 {!user && <Link to="/signup"><div className='btn'>Sign up</div></Link>}

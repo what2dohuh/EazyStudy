@@ -20,9 +20,9 @@ const MainstudentPage = () => {
 
             <BannerfindtutorComponent/>
             <div className="mix">
-        <StudentmessageComponent key={user.id}/>
+        {/* <StudentmessageComponent key={user.id}/> */}
         <div className="mix2">
-        <h3>Your Booking's</h3>
+        <h3>Your Tutor's</h3>
         <BookingstudentComponent/>
         </div>
             </div>

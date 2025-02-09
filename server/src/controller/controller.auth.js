@@ -52,18 +52,19 @@ export const loginUser = async (req, res) => {
         // Set cookie
         res.cookie('token', token, {
             httpOnly: true,
-            secure: process.env.NODE_ENV === 'production',
+            secure: process.env.NODE_ENV === 'production', // Use `true` in production
             sameSite: 'strict',
             maxAge: 24 * 60 * 60 * 1000 // 24 hours
         });
 
-        res.json({
+        return res.json({
             message: 'Logged in successfully',
             user: {
                 id: user._id,
                 name: user.name,
-                email: user.email
-            }
+                email: user.email,
+            },
+            token: token
         });
     } catch (error) {
         res.status(500).json({ message: 'Server error:'+error });

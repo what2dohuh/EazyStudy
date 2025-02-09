@@ -24,6 +24,7 @@ const HomePage = () => {
                 <Link to="/signup">
                     <button> Sign up</button>
                 </Link>
+              
             </div>
             <div className="headerContainer">
        <img src={myGif}/>

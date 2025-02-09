@@ -3,18 +3,11 @@ import { registerUser, loginUser } from '../controller/controller.auth.js';
 import { check } from 'express-validator';
 import authMiddleware from '../middleware/authmiddleware.js';
 import cookieParser from 'cookie-parser';
-import cors from 'cors';
 
 const router = express.Router();
 
 // Add cookie parser middleware
 router.use(cookieParser());
-
-// Add CORS middleware
-router.use(cors({
-    origin: 'http://localhost:5173',
-    credentials: true
-}));
 
 router.get('/', (req, res) => {
     res.send('API is running...');

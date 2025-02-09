@@ -66,3 +66,67 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* StudentmessageComponent.css */
+
+/* General container styling */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header section */
+.upbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #6200ea;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.upbox h3 {
+  margin: 0;
+}
+
+.view-all {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.view-all:hover {
+  text-decoration: underline;
+}
+
+/* Messages section */
+.messages {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.message-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* No messages styling */
+.no-messages {
+  text-align: center;
+}
+
+.nomessages-img {
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+.btnfind {
+ 

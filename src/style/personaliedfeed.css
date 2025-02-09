@@ -1,0 +1,82 @@
+.personalized-feed {
+    padding: 20px;
+    text-align: center;
+    position: relative; /* Add relative positioning to the container */
+}
+
+.personalized-feed h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.personalized-feed p {
+    font-size: 1.2em;
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap; /* Allow options to wrap to the next line */
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.option {
+    border: 1px solid #ccc;
+    border-radius: 15px; /* Make edges curly */
+    padding: 10px; /* Make the options smaller */
+    width: 25%; /* Adjust the width to make the options smaller */
+    text-align: left;
+    margin-bottom: 20px; /* Add space between rows */
+    cursor: pointer; /* Make the options clickable */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.option:hover {
+    background-color: #f0f0f0; /* Change background color on hover */
+}
+
+.option.selected {
+    background-color: #007bff; /* Change background color when selected */
+    color: white; /* Change text color when selected */
+}
+
+.option h2 {
+    font-size: 1.2em; /* Adjust the font size to make the options smaller */
+    margin-bottom: 10px;
+}
+
+.option p {
+    font-size: 0.9em; /* Adjust the font size to make the options smaller */
+}
+
+.load-more-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    color: black; /* Remove blue color */
+    cursor: pointer;
+    border: 1px solid #ccc; /* Add border to match other options */
+    border-radius: 15px; /* Make edges curly */
+    padding: 10px; /* Make the options smaller */
+    width: 25%; /* Adjust the width to make the options smaller */
+    text-align: center; /* Center the text */
+    margin-bottom: 20px; /* Add space between rows */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.load-more-option:hover {
+    background-color: #007bff; /* Change background color on hover */
+    color: white; /* Change text color on hover */
+}
+
+.next {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 20px;
+}

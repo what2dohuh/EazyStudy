@@ -9,12 +9,8 @@ const router = express.Router();
 
 // Add cookie parser middleware
 router.use(cookieParser());
+router.use(express.json())
 
-// Add CORS middleware
-router.use(cors({
-    origin: 'http://your-frontend-domain',
-    credentials: true
-}));
 
 router.get('/', (req, res) => {
     res.send('API is running...');
@@ -43,5 +39,7 @@ router.get('/logout', (req, res) => {
     res.clearCookie('token');
     res.json({ message: 'Logged out successfully' });
 });
+
+// Add this route with your other routes
 
 export default router;

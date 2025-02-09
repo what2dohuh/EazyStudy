@@ -19,14 +19,14 @@ const SignupStudentPage = () => {
             return;
         }
         try {
-            const response = await axios.post('http://localhost:5000/api/register', {
+            const response = await axios.post('http://localhost:8080/api/register', {
                 email,
                 name,
                 password
             });
             setSuccess('Signup successful!');
             setError('');
-            navigate('/login'); 
+            navigate('/personalized-feed'); 
         } catch (err) {
             setError('Signup failed. Please try again.');
             setSuccess('');

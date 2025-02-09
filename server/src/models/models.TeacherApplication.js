@@ -29,7 +29,17 @@ const teacherApplicationSchema = new mongoose.Schema({
     },
     documents: {
         type: [String],  // Array of document URLs
-        required: true
+        required: false
+    },
+    expectedFee: {
+        type: Number,
+        required: true,
+        min: 0
+    },
+    aboutMe: {
+        type: String,
+        required: true,
+        maxLength: 1000
     },
     createdAt: {
         type: Date,
@@ -37,6 +47,13 @@ const teacherApplicationSchema = new mongoose.Schema({
     }
 });
 
+// Add a pre-save middleware to validate expectedFee
+teacherApplicationSchema.pre('save', function(next) {
+    if (this.expectedFee < 0) {
+        next(new Error('Expected fee cannot be negative'));
+    }
+    next();
+});
 
 const TeacherApplication = mongoose.model('TeacherApplication', teacherApplicationSchema);
 export default TeacherApplication;

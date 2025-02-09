@@ -11,7 +11,7 @@ export function UserContextProvider({ children }) {
             try {
                 const token = localStorage.getItem('token');
                 if (token) {
-                    const response = await axios.get('http://localhost:5000/api/profile', {
+                    const response = await axios.get('http://localhost:8080/api/profile', {
                         headers: {
                             Authorization: `Bearer ${token}`
                         }

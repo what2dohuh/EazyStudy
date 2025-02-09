@@ -1,0 +1,66 @@
+.message-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+}
+
+.message-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #f8fafc;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+}
+
+.action-btn.chat {
+    color: #3b82f6;
+}
+
+.action-btn.chat:hover {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.action-btn.video {
+    color: #10b981;
+}
+
+.action-btn.video:hover {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+/* Update existing message-card hover state */
+.message-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-color: #3b82f6;
+}
+
+/* Add loading state for buttons */
+.action-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}

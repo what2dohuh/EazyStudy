@@ -12,7 +12,7 @@ const SelectLoginPage = () => {
                     <h2>Learn</h2>
                     <img src={student} ></img>
                     <p>Have lessons, message your tutor or watch your lessons back</p>
-                    <Link to='/learn' ><button className='studentbtn'>Learn</button></Link>
+                    <Link to='/find' ><button className='studentbtn'>Learn</button></Link>
                 </div>
                 <div className="box">
                 <h2> Teach</h2>

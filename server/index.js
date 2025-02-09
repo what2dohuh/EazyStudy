@@ -9,7 +9,11 @@ import connectDB from './src/config.js';
 // Load environment variables
 dotenv.config();
 const app = express();
-const PORT = 5000;
+const PORT = 8080;
+app.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true,
+}));
 
 // Middleware
 app.use(express.json());
