@@ -36,9 +36,6 @@ const NavabarComponent = () => {
                 </div>
             </div>
             <div className='right'>
-            {user ? <div className="bold">
-                        <Link to='/'>{"Welcome:"+user?.user.name}</Link>
-                    </div> : ""}
            
             <div className="bold">
                         <Link to='/find'>Find a tutor</Link>
@@ -55,7 +52,11 @@ const NavabarComponent = () => {
                 <button className="on" onClick={toggole}>
                     <Reorder />
                 </button>
+                {user ? <div className="bold">
+                        <Link to='/'>{"LogedIn as "+user?.user.name}</Link>
+                    </div> : ""}
             </div>
+            
         </div>
     );
 };

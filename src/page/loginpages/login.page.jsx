@@ -28,7 +28,7 @@ const LoginPage = () => {
                     email,
                     password,
                 }, 
-                {
+                {   withCredentials: true,
                     headers: {
                         'Content-Type': 'application/json',
                     }

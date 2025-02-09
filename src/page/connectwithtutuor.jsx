@@ -13,6 +13,15 @@ const ConnectWithTutor = () => {
     const [message, setMessage] = useState('');
     const [chats, setChats] = useState([]);
     const [isConnected, setIsConnected] = useState(false);
+    
+    // Get tutor info from location state
+    const tutorName = location.state?.tutorName || 'Unknown Tutor';
+    const subject = location.state?.subject || 'Subject';
+    const tutorInitials = tutorName
+        .split(' ')
+        .map(name => name[0])
+        .join('')
+        .toUpperCase();
 
     useEffect(() => {
         // Connect to Socket.IO server
@@ -119,10 +128,10 @@ const ConnectWithTutor = () => {
         <div className="chat-container">
             <div className="chat-header">
                 <div className="tutor-info">
-                    <div className="tutor-avatar">JD</div>
+                    <div className="tutor-avatar">{tutorInitials}</div>
                     <div className="tutor-details">
-                        <h2>John Doe</h2>
-                        <span>Mathematics Tutor</span>
+                        <h2>{tutorName}</h2>
+                        <span>{subject} Tutor</span>
                     </div>
                 </div>
             </div>
