@@ -6,6 +6,7 @@ import { Server } from 'socket.io';
 import routes from './src/routes/routes.auth.js';
 import teacherRoutes from './src/routes/routes.verifed.js';
 import channelRoutes from './src/routes/routes.channel.js';
+import interestRoutes from './src/routes/routes.interests.js';
 import connectDB from './src/config.js';
 
 // Load environment variables
@@ -95,6 +96,7 @@ io.on('connection', (socket) => {
 app.use('/api', routes);
 app.use('/api/verifed', teacherRoutes);
 app.use('/api/channel', channelRoutes);
+app.use('/api/interests', interestRoutes);
 
 // Start server with WebSocket support
 httpServer.listen(PORT, () => {

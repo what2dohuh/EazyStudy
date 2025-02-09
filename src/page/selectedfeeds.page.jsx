@@ -1,36 +1,109 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { UserContext } from '../contex/user.context.jsx';
 import { useNavigate } from 'react-router-dom';
+import { FaGraduationCap, FaBriefcase, FaBook, FaArrowRight } from 'react-icons/fa';
 import '../style/selectedfeed.css';
 
 const SelectedFeedsPage = () => {
     const { user } = useContext(UserContext);
     const navigate = useNavigate();
+    const [suggestions, setSuggestions] = useState(null);
+    const [loading, setLoading] = useState(false);
     const selectedOptions = JSON.parse(localStorage.getItem('selectedOptions')) || [];
 
-    const handleNext = () => {
-        navigate('/login'); // or wherever you want to navigate
+    useEffect(() => {
+        fetchSuggestions();
+    }, []);
+
+    const fetchSuggestions = async () => {
+        try {
+            setLoading(true);
+            const response = await fetch('http://localhost:8080/api/interests/suggest-fields', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ interests: selectedOptions })
+            });
+
+            const data = await response.json();
+            if (data.success) {
+                setSuggestions(data.suggestions);
+            }
+        } catch (error) {
+            console.error('Error fetching suggestions:', error);
+        } finally {
+            setLoading(false);
+        }
     };
+
 
     return (
         <div className="selected-feeds">
-            <h1>{user?.name}Selected Feeds</h1>
-            <div className="options">
+            <h1>Welcome {user?.name}!</h1>
+            <h2>Your Selected Interests</h2>
+            
+            <div className="interests-grid">
                 {selectedOptions.map((field, index) => (
-                    <div className="option" key={index}>
-                        <h2>{field}</h2>
-                        <p>Description for {field}.</p>
+                    <div className="interest-tag" key={index}>
+                        {field}
                     </div>
                 ))}
-            <button className="next-button" onClick={handleNext}>
-                <span>Continue to Dashboard</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-            </button>
             </div>
+
+            {loading ? (
+                <div className="loading-container">
+                    <div className="loading-spinner"></div>
+                    <p>Analyzing your interests...</p>
+                </div>
+            ) : suggestions ? (
+                <div className="suggestions-container">
+                    <div className="suggestions-grid">
+                        <div className="suggestion-card">
+                            <div className="card-header">
+                                <FaGraduationCap className="card-icon" />
+                                <h3>Recommended Fields</h3>
+                            </div>
+                            <ul>
+                                {suggestions.academicFields.map((field, index) => (
+                                    <li key={index}>{field}</li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <div className="suggestion-card">
+                            <div className="card-header">
+                                <FaBriefcase className="card-icon" />
+                                <h3>Career Paths</h3>
+                            </div>
+                            <ul>
+                                {suggestions.careerPaths.map((career, index) => (
+                                    <li key={index}>{career}</li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <div className="suggestion-card">
+                            <div className="card-header">
+                                <FaBook className="card-icon" />
+                                <h3>Subjects to Study</h3>
+                            </div>
+                            <ul>
+                                {suggestions.recommendedSubjects.map((subject, index) => (
+                                    <li key={index}>{subject}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            ) : null}
+
+            <button className="next-button" onClick={() => navigate('/select')}>
+                <span>Continue to Dashboard</span>
+                <FaArrowRight />
+            </button>
         </div>
     );
-}
+};
 
 export default SelectedFeedsPage;

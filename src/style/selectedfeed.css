@@ -8,14 +8,20 @@
 }
 
 .selected-feeds h1 {
-    color: #2d3748;
+    color: #1e293b;
     font-size: 2.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     text-align: center;
     font-weight: 700;
     background: linear-gradient(135deg, #4299e1, #667eea);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.selected-feeds h2 {
+    color: #64748b;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .options {
@@ -53,19 +59,108 @@
     line-height: 1.5;
 }
 
+.interests-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.interest-tag {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.9rem;
+}
+
+.suggestions-container {
+    margin: 2rem 0;
+}
+
+.suggestions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.suggestion-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.suggestion-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-icon {
+    font-size: 1.5rem;
+    color: #3b82f6;
+}
+
+.card-header h3 {
+    margin: 0;
+    color: #1e293b;
+}
+
+.suggestion-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.suggestion-card li {
+    padding: 0.75rem;
+    border-bottom: 1px solid #e2e8f0;
+    color: #64748b;
+}
+
+.suggestion-card li:last-child {
+    border-bottom: none;
+}
+
+.loading-container {
+    text-align: center;
+    padding: 3rem;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3b82f6;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 .next-button {
-    margin-top: auto;
-    align-self: center;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: linear-gradient(135deg, #4299e1, #667eea);
-    color: white;
+    margin: 2rem auto;
     padding: 1rem 2rem;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
     border: none;
     border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(66, 153, 225, 0.2);
